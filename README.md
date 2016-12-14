@@ -24,6 +24,7 @@ constructor(name: String,  age: Int, ctx : Context, isFelmale: Boolean) : this(n
 }
 ```
 Du kan lave så mange constructors du vil i en klasse.
+
 **Arv**
 Arv i kotlin fungere efter følgende syntaks:
 
