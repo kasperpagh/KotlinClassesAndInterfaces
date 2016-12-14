@@ -36,6 +36,8 @@ Ovenstående er en klasse, Student, som extender Person og implementere interfac
 
 
 Når du laver constructoren til ting der extender, skal de kalde deres supers constructor (ovenfor er det Person(name,age,ctx). Derudover kan de selvfølgelig have lige så mange ekstra parametre som det skal være. Man behøver ikke at bruge extends eller implements, da kotlin selv finder ud af hvad det er.
+
+
 **Inner Classes**
 Med inner classes kan vi lave klasser som har kendskab til outerklassen variable. Dette gør at du kan tilgå dem i innerklassen, og fx lave funktioner som skal bruge variable fra outerklassen.
 Dette kan ses i eksemplet herunder.
@@ -52,6 +54,7 @@ Da inner class StudentCard befinder sig i Student klassen, kan vi kalde den sål
 ```kotlin
 student1.StudentCard().getDiscount()
 ```
+
 
 
 **Interfaces**
