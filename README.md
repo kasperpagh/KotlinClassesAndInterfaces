@@ -3,7 +3,7 @@
 
 Klasser i Kotlin laves på følgende vis: 
 
-```
+```kotlin
 open class Person(val name: String, var age : Int, val ctx : Context) : HumanInterface
 {
 }
@@ -17,7 +17,7 @@ Altså skal en klasse være open førend, det kan lade sig gøre at arve derfra 
 
 
 Det er, ligesom i Java, muligt at overloade en klasses constructor, det gøres på følgende vis:
-```
+```kotlin
 constructor(name: String,  age: Int, ctx : Context, isFelmale: Boolean) : this(name, age, ctx)
 {
    //Constuctor overload. Sekundære constructors skal bruge den opridelige constructor, denne refereres som this.
@@ -27,7 +27,7 @@ Du kan lave så mange constructors du vil i en klasse.
 **Arv**
 Arv i kotlin fungere efter følgende syntaks:
 
-```
+```kotlin
 class Student(name: String, age: Int, ctx: Context, klasse: Int) : Person(name, age, ctx), HumanInterface
 ```
 Ovenstående er en klasse, Student, som extender Person og implementere interfacet HumanInterface. Du kan, ligesom i Java, kun arve fra en klasse, men implementere så mange interfaces du har lyst til (komma separeret). 
@@ -37,7 +37,7 @@ Når du laver constructoren til ting der extender, skal de kalde deres supers co
 **Inner Classes**
 Med inner classes kan vi lave klasser som har kendskab til outerklassen variable. Dette gør at du kan tilgå dem i innerklassen, og fx lave funktioner som skal bruge variable fra outerklassen.
 Dette kan ses i eksemplet herunder.
-```
+```kotlin
 inner class StudentCard
 {
    fun getDiscount()
@@ -47,7 +47,7 @@ inner class StudentCard
 }
 ```
 Da inner class StudentCard befinder sig i Student klassen, kan vi kalde den således:
-```
+```kotlin
 student1.StudentCard().getDiscount()
 ```
 
@@ -58,7 +58,7 @@ interface HumanInterface{fun takeAStep()}
 Interfaces må her gerne have simple implementationer som fx en Log, eller lignende. Man kan godt deklarere variable men ikke give dem værdi.
 
 En klasse som implementere flere interfaces med samme metode kan som i eksemplet nedenunder se således ud.
-```
+```kotlin
 interface HumanInterface
 {
    fun takeAStep()
@@ -92,12 +92,12 @@ I dette eksempel kan vi se at hvis de 2 interfaces har samme metode, men med 2 f
 
 **Instantiering af klasser**
 Skal man lave kotlin objekter, gøres det på følgende vis:
-```
+```kotlin
 val student1 = Student("Pelle Von Knygelbrehchen", 12, this, 15)
 ```
 Bemærk at det ikke er nødvendigt at specificere en datatype, samt at der ikke er noget new keyword.
 Polymorfi kan laves på følgende måde:
-```
+```kotlin
 val polyMorph : HumanInterface
 polyMorph = student1
 ```
